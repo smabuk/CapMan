@@ -12,6 +12,8 @@ public enum Direction
 
 public static class DirectionExtensions
 {
+    public static readonly IEnumerable<Direction> Directions = Enum.GetValues<Direction>();
+
     public static Direction Opposite(this Direction d) => d switch
     {
         Up => Down,
@@ -31,6 +33,6 @@ public static class DirectionExtensions
         _ => false,
     };
 
-    public static Direction[] Turns(this Direction currentDirection) => [.. Enum.GetValues<Direction>().Where(d => d != currentDirection)];
+    public static IEnumerable<Direction> Turns(this Direction currentDirection) => Directions.Where(d => d != currentDirection);
 
 }
