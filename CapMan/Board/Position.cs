@@ -1,6 +1,6 @@
 namespace CapMan;
 
-public record struct Position(double X, double Y)
+public readonly record struct Position(double X, double Y)
 {
     /// <summary>
     /// Given the direction of movement, returns the current BoardPosition that

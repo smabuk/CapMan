@@ -1,5 +1,5 @@
 namespace CapMan;
-public record struct BoundingBox(double X, double Y, double Width, double Height)
+public readonly record struct BoundingBox(double X, double Y, double Width, double Height)
 {
     public double Left => X;
     public double Top => Y;

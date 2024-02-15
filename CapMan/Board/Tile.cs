@@ -1,6 +1,6 @@
 namespace CapMan;
 
-public record struct Tile(int X, int Y)
+public readonly record struct Tile(int X, int Y)
 {
     public Tile Step(Direction direction) => Step(direction, 1);
     public Tile Step(Direction direction, int distance) => direction switch
