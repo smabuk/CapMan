@@ -218,11 +218,11 @@ public static class BoardExtensions
         return position switch
         {
             // Wrap on Left
-            var (x, _) when x < -WrapDistance => position with { X = x + board.Width + 2 * WrapDistance },
+            { X: < -WrapDistance } => position with { X = position.X + board.Width + 2 * WrapDistance },
+            // Wrap on Top
+            { Y: < -WrapDistance } => position with { Y = position.Y + board.Height + 2 * WrapDistance },
             // Wrap on Right
             var (x, _) when x > (board.Width + WrapDistance) => position with { X = x - (board.Width + 2 * WrapDistance) },
-            // Wrap on Top
-            var (_, y) when y < -WrapDistance => position with { Y = y + board.Height + 2 * WrapDistance },
             // Wrap on Bottom
             var (_, y) when y > (board.Height + WrapDistance) => position with { Y = y - (board.Height + 2 * WrapDistance) },
             // No wrap
