@@ -120,18 +120,19 @@ void HandleInput()
     {
         game.Player.NextDirection = Direction.Up;
     }
-    if (Raylib.IsKeyDown(KeyboardKey.D) || Raylib.IsKeyDown(KeyboardKey.Right))
+    else if (Raylib.IsKeyDown(KeyboardKey.D) || Raylib.IsKeyDown(KeyboardKey.Right))
     {
         game.Player.NextDirection = Direction.Right;
     }
-    if (Raylib.IsKeyDown(KeyboardKey.A) || Raylib.IsKeyDown(KeyboardKey.Left))
+    else if (Raylib.IsKeyDown(KeyboardKey.A) || Raylib.IsKeyDown(KeyboardKey.Left))
     {
         game.Player.NextDirection = Direction.Left;
     }
-    if (Raylib.IsKeyDown(KeyboardKey.S) || Raylib.IsKeyDown(KeyboardKey.Down))
+    else if (Raylib.IsKeyDown(KeyboardKey.S) || Raylib.IsKeyDown(KeyboardKey.Down))
     {
         game.Player.NextDirection = Direction.Down;
     }
+
     if (Raylib.IsKeyPressed(KeyboardKey.Zero))
     {
         game.Player.Speed++;
